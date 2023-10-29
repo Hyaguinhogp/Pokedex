@@ -14,16 +14,5 @@ export class PokemonCardComponent {
   ngOnInit() {
     this.http.get('https://pokeapi.co/api/v2/pokemon/' + this.pokemon.name)
       .subscribe(data => this.pokemon = data);
-
-    const root = document.documentElement;
-    let width = window.innerWidth;
-    console.log(width)
-    if (width < 1200) {
-      root.style.setProperty('--column-width', (((width - 40) - (5 * 20)) / 6) + 'px');
-    }
-    else {
-      root.style.setProperty('--column-width', (((1200) - (11 * 20)) / 12) + 'px');
-    }
   }
-
 }

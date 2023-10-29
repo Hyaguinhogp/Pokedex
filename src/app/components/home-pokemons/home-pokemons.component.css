@@ -1,5 +1,6 @@
 .default-container {
     padding-top: 60px;
+    padding-bottom: 60px;
     background-color: var(--theme-00);
     color: white;
 }
@@ -33,9 +34,18 @@
     width: 100%;
 }
 
+.button-container {
+    display: flex;
+    justify-content: end;
+}
+
 @media (min-width: 1200px) {
     .home-pokemons__text {
         width: 100%;
         align-items: start;
+    }
+
+    .button-container {
+        width: 100%;
     }
 }

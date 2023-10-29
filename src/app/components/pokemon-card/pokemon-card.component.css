@@ -7,6 +7,13 @@
     padding: 5px;
     background-color: #FFFC;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.card-container:hover {
+    background-color: white;
+    color: #000C;
+    font-weight: 500;
 }
 
 .pokemon-image {
@@ -17,8 +24,8 @@
 }
 
 .pokemon-name {
-    color: #000C;
     font-size: var(--font-05);
+    color: #000C;
 }
 
 @media (min-width: 1200px) {
