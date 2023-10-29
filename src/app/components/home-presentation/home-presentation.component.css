@@ -3,6 +3,7 @@
     background-color: var(--theme-00);
     color: white;
     padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .home-detail {
@@ -33,6 +34,12 @@
     background-repeat: no-repeat;
 }
 
+.presentation-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .title {
     padding-top: 30px;
     font-size: var(--font-01);
@@ -43,32 +50,9 @@
 .subtitle {
     width: 80%;
     padding-top: 10px;
+    padding-bottom: 30px;
     text-align: center;
     font-size: var(--font-03);
     line-height: normal;
     color: #EEE;
-}
-
-.input-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 320px;
-    height: 35px;
-    padding: 0 15px;
-    margin-top: 30px;
-    margin-bottom: 60px;
-    border-radius: 20px;
-    background-color: #FFFD;
-}
-
-input {
-    width: 80%;
-    background-color: transparent;
-    border: 0;
-}
-
-input:focus {
-    outline: none;
 }

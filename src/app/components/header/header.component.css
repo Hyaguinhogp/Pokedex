@@ -25,3 +25,17 @@
     height: 36px;
     cursor: pointer;
 }
+
+.search {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    .logo-icon {
+        display: none;
+    }
+
+    .search {
+        display: flex;
+    }
+}
