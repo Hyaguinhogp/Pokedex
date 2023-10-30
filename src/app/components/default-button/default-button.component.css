@@ -1,0 +1,14 @@
+.default-button__container {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    gap: 10px;
+    border-radius: 30px;
+    background-color: #FFF;
+    color: #000C;
+    cursor: pointer;
+}
+
+.default-button__container:hover {
+    color: black;
+}

@@ -1,0 +1,31 @@
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 320px;
+    height: 35px;
+    padding: 0 15px;
+    border-radius: 20px;
+    background-color: #FFFD;
+}
+
+input {
+    width: 80%;
+    background-color: transparent;
+    border: 0;
+    font-size: var(--font-04);
+}
+
+input::placeholder {
+    font-size: var(--font-04);
+}
+
+input:focus {
+    outline: none;
+}
+
+.search-icon {
+    color: white;
+    width: 25px;
+    height: 25px;
+}

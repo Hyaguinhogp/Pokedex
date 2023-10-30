@@ -1,0 +1,18 @@
+.pokemons-container {
+    width: 100%;
+}
+
+.pokemons-table {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto;
+    row-gap: 20px;
+    justify-content: space-between;
+}
+
+@media (min-width: 1200px) {
+    .pokemons-table {
+        grid-template-columns: auto auto auto auto auto auto;
+        row-gap: 20px;
+    }
+}
