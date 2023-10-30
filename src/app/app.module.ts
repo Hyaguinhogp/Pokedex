@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,12 @@ import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.com
 import { ListPokemonsComponent } from './components/list-pokemons/list-pokemons.component';
 import { DefaultButtonComponent } from './components/default-button/default-button.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { SvgProviderComponent } from './components/svg-provider/svg-provider.component';
+import { PokemonComponent } from './pages/pokemon/pokemon.component';
+import { PokemonInfoComponent } from './components/pokemon-info/pokemon-info.component';
+import { PokemonStatComponent } from './components/pokemon-stat/pokemon-stat.component';
+import { EvolutionsComponent } from './components/evolutions/evolutions.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +32,19 @@ import { LoadingComponent } from './components/loading/loading.component';
     PokemonCardComponent,
     ListPokemonsComponent,
     DefaultButtonComponent,
-    LoadingComponent
+    LoadingComponent,
+    SearchPageComponent,
+    SvgProviderComponent,
+    PokemonComponent,
+    PokemonInfoComponent,
+    PokemonStatComponent,
+    EvolutionsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
