@@ -1,6 +1,6 @@
 .default-container {
     align-items: start;
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 120px;
     background-color: var(--theme-00);
     color: white;

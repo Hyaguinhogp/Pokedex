@@ -14,7 +14,7 @@ export class ApiService {
 
   listAll() {
     this.loadingService.show();
-    return this.http.get(this.baseUrl + '/pokemons?limit=1292');
+    return this.http.get(this.baseUrl + '/pokemon?limit=1292');
   }
 
   listWithLimit(limit: number) {
