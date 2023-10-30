@@ -16,6 +16,10 @@ import { DefaultButtonComponent } from './components/default-button/default-butt
 import { LoadingComponent } from './components/loading/loading.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { SvgProviderComponent } from './components/svg-provider/svg-provider.component';
+import { PokemonComponent } from './pages/pokemon/pokemon.component';
+import { PokemonInfoComponent } from './components/pokemon-info/pokemon-info.component';
+import { PokemonStatComponent } from './components/pokemon-stat/pokemon-stat.component';
+import { EvolutionsComponent } from './components/evolutions/evolutions.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { SvgProviderComponent } from './components/svg-provider/svg-provider.com
     DefaultButtonComponent,
     LoadingComponent,
     SearchPageComponent,
-    SvgProviderComponent
+    SvgProviderComponent,
+    PokemonComponent,
+    PokemonInfoComponent,
+    PokemonStatComponent,
+    EvolutionsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from 'src/app/services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -9,10 +11,18 @@ import { HttpClient } from '@angular/common/http';
 export class PokemonCardComponent {
   @Input() pokemon: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private api: ApiService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    this.http.get('https://pokeapi.co/api/v2/pokemon/' + this.pokemon.name)
+    this.api.getByname(this.pokemon.name)
       .subscribe(data => this.pokemon = data);
+  }
+
+  clickHandle() {
+    this.router.navigate(['/pokemon/' + this.pokemon.name]);
   }
 }

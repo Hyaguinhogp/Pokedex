@@ -23,7 +23,6 @@ export class ApiService {
   }
 
   getByname(name: string) {
-    this.loadingService.show();
     return this.http.get(this.baseUrl + '/pokemon/' + name);
   }
 }

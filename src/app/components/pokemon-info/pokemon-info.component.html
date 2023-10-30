@@ -1,0 +1,58 @@
+<div class="default-container">
+    <div class="default-content">
+        <h1 class="pokemon-name">{{pokemon.name}}</h1>
+        <div class="pokemon-card">
+            <figure 
+                class="pokemon-image"
+                [ngStyle]="{'background-image': 'url(' + pokemon.sprites.front_default + ')'}">
+            </figure>
+            <div class="pokemon__basic-info">
+                <div class="basic-info__container">
+                    <h2 class="top-info">
+                        {{pokemon.weight/10}}<span>kg</span>
+                    </h2>
+                    <h2 class="bottom-info">PESO</h2>
+                </div>
+
+                <app-svg-provider svgPath="vertical-separator" />
+                
+                <div class="basic-info__container">
+                    <div *ngFor="let type of pokemon.types">{{type.type.name}}</div>
+                </div>
+
+                <app-svg-provider svgPath="vertical-separator" />
+
+                <div class="basic-info__container">
+                    <h2 class="top-info">
+                        {{pokemon.height*10}}<span>cm</span>
+                    </h2>
+                    <h2 class="bottom-info">ALTURA</h2>
+                </div>
+            </div>
+
+            <div class="pokemon-hp__container">
+                <div class="pokemon-hp__bar"></div>
+                <h2 class="pokemon-hp">
+                    {{pokemon.stats[0].base_stat}}<span>HP</span>
+                </h2>
+            </div>
+
+            <div (click)="setSelector()" class="stats-evo__container">
+                <h2 [ngClass]="isStat ? 'selected' : ''" class="option">estatísticas</h2>
+                <h2 [ngClass]="!isStat ? 'selected' : ''" class="option">evolução</h2>
+            </div>
+
+            <ng-container *ngIf="isStat; else evolutions">
+                <div class="stats-container">
+                    <div *ngFor="let stat of pokemon.stats">
+                        <app-pokemon-stat [stat]="stat" />
+                    </div>
+                </div>
+            </ng-container>
+
+            <ng-template #evolutions>
+                <app-evolutions />
+            </ng-template>
+        </div>
+    </div>
+</div>
