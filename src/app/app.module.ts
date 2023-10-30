@@ -13,6 +13,8 @@ import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.com
 import { ListPokemonsComponent } from './components/list-pokemons/list-pokemons.component';
 import { DefaultButtonComponent } from './components/default-button/default-button.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { SvgProviderComponent } from './components/svg-provider/svg-provider.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { LoadingComponent } from './components/loading/loading.component';
     PokemonCardComponent,
     ListPokemonsComponent,
     DefaultButtonComponent,
-    LoadingComponent
+    LoadingComponent,
+    SearchPageComponent,
+    SvgProviderComponent
   ],
   imports: [
     BrowserModule,
