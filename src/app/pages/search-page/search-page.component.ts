@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from 'src/app/services/api.service';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-search-page',
@@ -10,14 +11,13 @@ export class SearchPageComponent {
   pokemons: any;
   pokemonList: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private api: ApiService, private loadingService: LoadingService) { }
 
   ngOnInit() {
-    this.http.get('https://pokeapi.co/api/v2/pokemon?limit=18')
-      .subscribe(data => {
-        console.log(data);
-        this.pokemons = data
-        this.pokemonList = this.pokemons.results
-      });
+    this.api.listWithLimit(18).subscribe(data => {
+      this.pokemons = data;
+      this.pokemonList = this.pokemons.results;
+      this.loadingService.hide();
+    })
   }
 }

@@ -17,7 +17,6 @@ export class SvgProviderComponent {
     if(this.svgPath) {
       this.http.get('../../../assets/' + this.svgPath + '.svg', { responseType: 'text' })
         .subscribe(data => {
-          console.log(data);
           this.svgContent = this.sanitizer.bypassSecurityTrustHtml(data);
         })
     }
