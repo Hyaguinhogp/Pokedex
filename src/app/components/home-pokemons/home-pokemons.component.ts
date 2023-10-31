@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { IPokemon, IPokemonList } from 'src/app/app-interfaces';
+import { ApiService } from 'src/app/services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-pokemons',
@@ -7,16 +10,20 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home-pokemons.component.css']
 })
 export class HomePokemonsComponent {
-  pokemons: any;
-  pokemonList: any;
+  pokemonList$: Observable<IPokemonList> = new Observable<IPokemonList>();
+  pokemonList: IPokemon[] = [];
+  pokemonObs: Observable<IPokemonList> = new Observable<IPokemonList>();
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private api: ApiService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    this.http.get('https://pokeapi.co/api/v2/pokemon?limit=18')
-      .subscribe(data => {
-        this.pokemons = data
-        this.pokemonList = this.pokemons.results
-      });
+    this.pokemonList$ = this.api.listWithLimit(18);
+  }
+
+  handleClick() {
+    this.router.navigate(['/search/all']);
   }
 }

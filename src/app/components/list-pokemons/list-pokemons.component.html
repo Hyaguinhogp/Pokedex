@@ -1,5 +1,8 @@
-<ul 
-    [ngClass]="classes"
->
-    <app-pokemon-card *ngFor="let pokemon of pokemonList" [pokemon]="pokemon" />
+<ul [ngClass]="classes">
+    <app-pokemon-card *ngFor="let pokemon of actualPokemons" [pokemon]="pokemon" />
 </ul>
+<div class="buttons">
+    <app-default-button (click)="previousPage()">Anterior</app-default-button>
+    <app-default-button>{{actualPage + 1}}</app-default-button>
+    <app-default-button (click)="nextPage()">Próxima</app-default-button>
+</div>

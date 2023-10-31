@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { LoadingService } from 'src/app/services/loading.service';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription, Observable, BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { IPokemon, IPokemonList } from 'src/app/app-interfaces';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-page',
@@ -10,32 +12,42 @@ import { Subscription, Observable, BehaviorSubject } from 'rxjs';
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent {
-  pokemons: any;
-  pokemonList: any[] = [];
-  search:string = '';
+  pokemons: IPokemonList = {} as IPokemonList;
+  pokemonList$: Observable<IPokemonList> = new Observable<IPokemonList>();
+  search: string = '';
+  resultsNumber: number = 0;
 
   constructor(
     private api: ApiService, 
-    private loadingService: LoadingService,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.router.paramMap.subscribe((paramMap) => {
-      this.search = paramMap.get('name')!;
-      this.loadData();
-    })
+    this.pokemonList$ = this.router.paramMap.pipe(
+      switchMap(paramMap => {
+        this.search = paramMap.get('name') || '';
+        return this.loadData();
+      })
+    );
   }
   
-  loadData() {
-    this.search = this.router.snapshot.params['name']; 
-    console.log(this.search);
-    this.api.listAll().subscribe(data => {
-      this.pokemons = data;
-      this.pokemonList = this.pokemons.results.filter((pokemon: any) => {
-        return pokemon.name.includes(this.search.toLocaleLowerCase());
-      });
-      this.loadingService.hide();
-    })
+  loadData(): Observable<IPokemonList> {
+    if(this.search == 'all') {
+      this.search = 'Todos';
+      this.resultsNumber = 1292;
+      return this.api.listAll();
+    }
+    return this.api.listAll().pipe(
+      switchMap((data) => {
+        const result = data.results.filter((pokemon) => {
+          return (pokemon.name && pokemon.name.includes(this.search.toLowerCase()));
+        });
+        this.resultsNumber = result.length;
+        return new Observable<IPokemonList>(observer => {
+          observer.next({ results: result });
+          observer.complete();
+        });
+      })
+    );
   }
 }

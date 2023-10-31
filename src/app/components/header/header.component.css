@@ -21,6 +21,7 @@
 }
 
 .search {
+    width: 50%;
     display: flex;
 }
 
@@ -36,6 +37,6 @@
     }
 
     .search {
-        display: flex;
+        width: initial;
     }
 }

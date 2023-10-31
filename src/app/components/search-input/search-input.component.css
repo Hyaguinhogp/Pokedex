@@ -2,11 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     height: 35px;
     padding: 0 15px;
     border-radius: 20px;
-    background-color: #FFFD;
+    background-color: var(--gray-01);
 }
 
 input {
@@ -25,7 +26,7 @@ input:focus {
 }
 
 .search-icon {
-    color: var(--theme-03);
+    color: var(--theme-04);
     width: 25px;
     height: 25px;
 }

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
+import { IPokemon } from 'src/app/app-interfaces';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -9,22 +9,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./pokemon-card.component.css']
 })
 export class PokemonCardComponent {
-  @Input() pokemon: any;
+  @Input() pokemon: IPokemon = {} as IPokemon;
+  isVisible = false;
 
   constructor(
-    private http: HttpClient,
     private api: ApiService,
     private router: Router
   ) { }
 
   ngOnInit() {
-    if(typeof this.pokemon == 'string'){
-      this.api.getByname(this.pokemon)
-      .subscribe(data => this.pokemon = data);
-    }
-    else {
+    if(this.pokemon.name) {
+
       this.api.getByname(this.pokemon.name)
-        .subscribe(data => this.pokemon = data);
+        .subscribe(data => {
+          this.pokemon = data;
+          this.isVisible = true;
+          if(data.sprites.front_default == null) this.isVisible = false;
+        });
     }
   }
 

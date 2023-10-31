@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-svg-provider',
@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class SvgProviderComponent {
   @Input() svgPath: string = '';
-  public svgContent: any;
+  public svgContent: SafeHtml = {} as SafeHtml;
 
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 

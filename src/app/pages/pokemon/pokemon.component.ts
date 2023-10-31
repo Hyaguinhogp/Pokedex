@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IPokemon, IPokemonList } from 'src/app/app-interfaces';
 import { ApiService } from 'src/app/services/api.service';
 import { LoadingService } from 'src/app/services/loading.service';
 
@@ -8,7 +10,7 @@ import { LoadingService } from 'src/app/services/loading.service';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent {
-  pokemons: any;
+  pokemons$: Observable<IPokemonList> = new Observable<IPokemonList>();
 
   constructor(
     private api: ApiService,
@@ -16,10 +18,6 @@ export class PokemonComponent {
   ) {}
 
   ngOnInit() {
-    this.api.listWithLimit(18)
-      .subscribe((data: any) => {
-        this.pokemons = data.results;
-        this.loadingService.hide();
-      })
+    this.pokemons$ = this.api.listWithLimit(18);
   }
 }

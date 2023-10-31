@@ -20,6 +20,7 @@ import { PokemonComponent } from './pages/pokemon/pokemon.component';
 import { PokemonInfoComponent } from './components/pokemon-info/pokemon-info.component';
 import { PokemonStatComponent } from './components/pokemon-stat/pokemon-stat.component';
 import { EvolutionsComponent } from './components/evolutions/evolutions.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { EvolutionsComponent } from './components/evolutions/evolutions.componen
     PokemonComponent,
     PokemonInfoComponent,
     PokemonStatComponent,
-    EvolutionsComponent
+    EvolutionsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

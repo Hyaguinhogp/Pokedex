@@ -2,11 +2,18 @@
 	--column-width: 0px;
 	--space-width: 20px;
 
-	--theme-00: #1EA898;
+	--theme-00: #178276;
 	--theme-01: #F0BB62;
 	--theme-02: #4D93BA;
 	--theme-03: #5AADDB;
 	--theme-04: #3181F8;
+
+	--black-00: #1C1C1C;
+	--black-01: #363636;
+
+	--gray-00: #F2F2F2;
+	--gray-01: #E5E5E5;
+	--gray-02: #CCC;
 
 	--font-00: 90px;
 	--font-01: 60px;

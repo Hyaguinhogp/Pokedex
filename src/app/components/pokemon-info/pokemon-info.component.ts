@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { IPokemon } from 'src/app/app-interfaces';
 
 @Component({
   selector: 'app-pokemon-info',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PokemonInfoComponent {
 
   name: string = '';
-  pokemon: any;
+  pokemon: IPokemon = {} as IPokemon;
   isStat: boolean = true;
 
   constructor(

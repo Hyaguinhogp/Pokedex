@@ -37,6 +37,7 @@
     font-size: var(--font-01);
     font-weight: 600;
     letter-spacing: -2.45px;
+    color: var(--black-00);
 }
 
 .subtitle {
@@ -46,7 +47,7 @@
     text-align: center;
     font-size: var(--font-03);
     line-height: normal;
-    color: #FFFC;
+    color: var(--black-01);
 }
 
 @media (min-width: 1200px) {
