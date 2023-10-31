@@ -50,8 +50,11 @@
 }
 
 .basic-info__container {
+    width: 32%;
+    height: 50px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 5px;
 }

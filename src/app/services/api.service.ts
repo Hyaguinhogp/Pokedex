@@ -25,4 +25,12 @@ export class ApiService {
   getByname(name: string) {
     return this.http.get(this.baseUrl + '/pokemon/' + name);
   }
+  
+  getSpecie(name: string) {
+    return this.http.get(this.baseUrl + '/pokemon-species/' + name);
+  }
+
+  getEvolutionChain(url: string) {
+    return this.http.get(url);
+  }
 }

@@ -18,8 +18,14 @@ export class PokemonCardComponent {
   ) { }
 
   ngOnInit() {
-    this.api.getByname(this.pokemon.name)
+    if(typeof this.pokemon == 'string'){
+      this.api.getByname(this.pokemon)
       .subscribe(data => this.pokemon = data);
+    }
+    else {
+      this.api.getByname(this.pokemon.name)
+        .subscribe(data => this.pokemon = data);
+    }
   }
 
   clickHandle() {

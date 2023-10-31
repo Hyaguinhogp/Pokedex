@@ -1,1 +1,7 @@
-<p>evolutions works!</p>
+<div class="evolutions-container">
+    <ng-container *ngFor="let evo of evolutions; let last = last">
+      <app-pokemon-card [pokemon]="evo"></app-pokemon-card>
+      <!-- Adicione o HTML que deseja entre os elementos -->
+        <app-svg-provider *ngIf="!last" [svgPath]="'down-arrow'" />
+    </ng-container>
+  </div>
