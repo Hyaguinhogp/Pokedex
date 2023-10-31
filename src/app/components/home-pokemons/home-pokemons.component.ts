@@ -15,7 +15,6 @@ export class HomePokemonsComponent {
   ngOnInit() {
     this.http.get('https://pokeapi.co/api/v2/pokemon?limit=18')
       .subscribe(data => {
-        console.log(data);
         this.pokemons = data
         this.pokemonList = this.pokemons.results
       });

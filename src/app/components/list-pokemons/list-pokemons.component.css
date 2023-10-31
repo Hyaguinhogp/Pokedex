@@ -5,14 +5,31 @@
 .pokemons-table {
     display: grid;
     width: 100%;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto;
+    column-gap: 20px;
     row-gap: 20px;
     justify-content: space-between;
 }
 
+.two-columns {
+    grid-template-columns: auto auto;
+}
+
+.three-columns {
+    grid-template-columns: auto auto auto;
+}
+
 @media (min-width: 1200px) {
     .pokemons-table {
-        grid-template-columns: auto auto auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
         row-gap: 20px;
+    }
+
+    .four-columns {
+        grid-template-columns: auto auto auto auto;
+    }
+    
+    .six-columns {
+        grid-template-columns: auto auto auto auto auto auto;
     }
 }

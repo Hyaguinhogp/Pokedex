@@ -1,5 +1,5 @@
-<div class="default-container">
-    <div class="default-content">
+<div class="container">
+    <div class="content">
         <h1 class="pokemon-name">{{pokemon.name}}</h1>
         <div class="pokemon-card">
             <figure 
@@ -51,7 +51,7 @@
             </ng-container>
 
             <ng-template #evolutions>
-                <app-evolutions />
+                <app-evolutions [name]="pokemon.name" />
             </ng-template>
         </div>
     </div>

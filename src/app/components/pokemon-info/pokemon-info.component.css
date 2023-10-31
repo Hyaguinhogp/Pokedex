@@ -1,12 +1,14 @@
-.default-container {
+.container {
+    width: 100%;
     padding-top: 120px;
     padding-bottom: 60px;
     background-color: var(--theme-00);
     color: white;
 }
 
-.default-content {
+.content {
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     gap: 150px;
@@ -21,7 +23,7 @@
 
 .pokemon-card {
     display: flex;
-    width: 100%;
+    width: 320px;
     max-width: 320px;
     flex-direction: column;
     align-items: center;
@@ -50,8 +52,11 @@
 }
 
 .basic-info__container {
+    width: 32%;
+    height: 50px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 5px;
 }

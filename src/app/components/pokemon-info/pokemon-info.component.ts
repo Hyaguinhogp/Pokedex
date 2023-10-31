@@ -19,6 +19,13 @@ export class PokemonInfoComponent {
   ) {}
 
   ngOnInit() {
+    this.router.paramMap.subscribe((paramMap) => {
+      this.name = paramMap.get('name')!;
+      this.loadData();
+    })
+  }
+  
+  loadData() {
     this.name = this.router.snapshot.params['name']; 
     this.api.getByname(this.name)
       .subscribe((data) => {
