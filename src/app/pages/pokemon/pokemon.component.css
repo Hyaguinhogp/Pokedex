@@ -7,7 +7,7 @@
     min-height: 100vh;
     align-items: start;
     padding-bottom: 30px;
-    background-color: var(--theme-00);
+    background-color: var(--gray-00);
     color: white;
 }
 
@@ -39,12 +39,13 @@
 .title {
     font-size: var(--font-02);
     font-weight: 600;
+    color: var(--black-00);
 }
 
 .subtitle {
     font-size: var(--font-04);
     font-weight: 500;
-    color: #E6E6E6
+    color: var(--black-01);
 }
 
 @media (min-width: 1200px) {

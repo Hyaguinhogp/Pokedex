@@ -5,13 +5,13 @@
     width: calc((var(--column-width) * 2) + var(--space-width));
     height: calc((var(--column-width) * 2) + var(--space-width));
     padding: 5px;
-    background-color: #FFFC;
+    background-color: var(--gray-01);
     border-radius: 10px;
     cursor: pointer;
 }
 
 .card-container:hover {
-    background-color: white;
+    background-color: var(--gray-02);
     color: #000C;
     font-weight: 500;
 }
@@ -25,7 +25,8 @@
 
 .pokemon-name {
     font-size: var(--font-05);
-    color: #000C;
+    font-weight: 500;
+    color: var(--black-00);
 }
 
 @media (min-width: 1200px) {

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IStat } from 'src/app/app-interfaces';
 
 @Component({
   selector: 'app-pokemon-stat',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./pokemon-stat.component.css']
 })
 export class PokemonStatComponent {
-  @Input() stat: any;
+  @Input() stat: IStat = {} as IStat;
   barValue: number = 0;
 
   ngOnInit() {
