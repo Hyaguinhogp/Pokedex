@@ -1,3 +1,5 @@
-<ul class="pokemons-table">
+<ul 
+    [ngClass]="classes"
+>
     <app-pokemon-card *ngFor="let pokemon of pokemonList" [pokemon]="pokemon" />
 </ul>
