@@ -1,0 +1,14 @@
+<div class="default-container">
+    <div class="default-content">
+        <app-pokemon-info />
+        <div class="pokemons-list">
+            <div class="text-container">
+                <h2 class="title">Mais pokemons relacionados</h2>
+                <h3 class="subtitle">Encontre qualquer pokemon</h3>
+            </div>
+            <div class="pokemons-container">
+                <app-list-pokemons [desktopColumns]="4" [pokemonList$]="pokemons$" />
+            </div>
+        </div>
+    </div>
+</div>

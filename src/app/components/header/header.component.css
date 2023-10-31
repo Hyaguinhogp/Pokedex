@@ -1,0 +1,42 @@
+.default-container {
+    position: absolute;
+    z-index: 5;
+}
+
+.default-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.logo-container {
+    background-image: url(../../../assets/pokedex-icon.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.search {
+    width: 50%;
+    display: flex;
+}
+
+.search-icon {
+    color: white;
+    width: 36px;
+    height: 36px;
+}
+
+@media (min-width: 1200px) {
+    .search-icon {
+        display: none;
+    }
+
+    .search {
+        width: initial;
+    }
+}

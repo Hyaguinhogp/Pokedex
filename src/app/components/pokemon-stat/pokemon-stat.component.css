@@ -1,0 +1,37 @@
+.stat-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+}
+
+.stat-name, .stat-value {
+    text-transform: uppercase;
+    font-size: var(--font-05);
+    font-weight: 500;
+}
+
+.stat-name {
+    width: 20%;
+}
+
+.stat-value {
+    display: flex;
+    justify-content: end;
+    width: 10%;
+}
+
+.stat-bar {
+    height: 4px;
+    border-radius: 2px;
+}
+
+.total {
+    width: 60%;
+    background-color: #EBEBEB;
+}
+
+.fill {
+    background-color: var(--theme-04);
+}

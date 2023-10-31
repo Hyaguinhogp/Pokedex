@@ -1,0 +1,35 @@
+.default-container {
+    align-items: start;
+    min-height: 100vh;
+    padding-top: 120px;
+    background-color: var(--gray-00);
+    color: white;
+}
+
+.default-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.search-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title {
+    font-size: var(--font-02);
+    font-weight: 600;
+    color: var(--black-00);
+}
+
+.search-string {
+    font-weight: 300;
+    font-style: italic;
+}
+
+.subtitle {
+    font-weight: 500;
+    color: var(--black-01);
+}
